@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ModeToggle } from "../mode-toggle";
+import { Separator } from "./separator";
 
 interface NavItem {
   name: string;
@@ -79,6 +81,8 @@ export function NavBar({ items, className }: NavBarProps) {
             </Link>
           );
         })}
+
+        <ModeToggle />
       </div>
     </div>
   );
