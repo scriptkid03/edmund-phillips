@@ -7,13 +7,15 @@ import { ExperienceSectionShort } from "@/components/experience";
 export default function About() {
   const technicalSkills = [
     "Next.js",
+    "React",
     "Angular",
     "React Native",
     "Expo",
-    "Tailwind CSS",
     "TypeScript",
-    "MongoDB",
-    "Python",
+    "JavaScript",
+    "Tailwind CSS",
+    "HTML5",
+    "CSS3",
     "Git & GitHub",
     "Figma",
   ];
@@ -50,9 +52,9 @@ export default function About() {
               About Me
             </h1>
             <p className='text-xl text-foreground/70 mb-6 leading-relaxed'>
-              I'm Edmund Kwame Odame Phillips, a passionate Full-Stack Developer
-              based in Accra, Ghana. Currently pursuing my B.Sc. in Computer
-              Science at Academic City University, I specialize in building
+              I'm Edmund Kwame Odame Phillips, a passionate Frontend Web
+              Developer based in Accra, Ghana. Recent B.Sc. Computer Science
+              graduate from Academic City University, I specialize in building
               modern web and mobile applications that solve real-world problems.
             </p>
             <p className='text-xl text-foreground/70 leading-relaxed'>

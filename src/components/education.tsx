@@ -25,7 +25,7 @@ export default function EducationSection() {
       institution: "Aggrey Memorial A.M.E Zion SHS",
       instLink: "https://www.aggreymemorial.com/",
       degree: "General Science",
-      period: "Jan. 2022 - Jun. 2025",
+      period: "Sept. 2018 - Oct. 2021",
       location: "Cape Coast, Ghana",
       logo: "/img/aggrey.jpg",
       coursework: [
@@ -104,7 +104,7 @@ export function EducationSectionShort() {
       institution: "Academic City University",
       instLink: "https://www.acity.edu.gh/",
       degree: "B.Sc. Computer Science",
-      period: "Jan. 2022 - Jun. 2025",
+      period: "Jan. 2022 - Jun. 2025 (Graduated)",
       location: "Accra, Ghana",
       logo: "/img/acity.png",
       coursework: [

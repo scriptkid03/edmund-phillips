@@ -17,7 +17,7 @@ import ExperienceSection from "@/components/experience";
 export default function Resume() {
   const personalInfo = {
     name: "Edmund Kwame Odame Phillips",
-    title: "Full-Stack Developer",
+    title: "Frontend Web Developer",
     email: "edmundkophillips@gmail.com",
     phone: "+233 20 896 8930",
     location: "Accra, Ghana",
@@ -27,21 +27,22 @@ export default function Resume() {
   };
 
   const technicalSkills = {
-    "Frontend Development": [
+    "Frontend Frameworks": [
       "Next.js",
+      "React",
       "Angular",
-      "React Native",
-      "Expo",
-      "Tailwind CSS",
       "TypeScript",
+      "JavaScript",
     ],
-    "Backend & Database": [
-      "MongoDB",
-      "Python",
-      "Spring Boot",
-      "API Development",
+    "Mobile Development": ["React Native", "Expo"],
+    "Styling & UI": [
+      "Tailwind CSS",
+      "CSS3",
+      "HTML5",
+      "Responsive Design",
+      "Figma",
     ],
-    "Tools & Others": ["Git & GitHub", "Figma", "VS Code", "Responsive Design"],
+    "Tools & Others": ["Git & GitHub", "VS Code", "MongoDB", "API Integration"],
   };
 
   const softSkills = [
@@ -81,10 +82,10 @@ export default function Resume() {
                   {personalInfo.title}
                 </p>
                 <p className='text-lg text-foreground/70 mb-8 max-w-2xl leading-relaxed'>
-                  Passionate Full-Stack Developer specializing in modern web and
-                  mobile applications. Currently pursuing B.Sc. in Computer
-                  Science with hands-on experience in frontend and backend
-                  development.
+                  Frontend Web Developer specializing in modern web and mobile
+                  applications using React, Next.js, and React Native. Recent
+                  B.Sc. Computer Science graduate with hands-on experience
+                  building responsive, user-friendly interfaces.
                 </p>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 text-foreground/70'>
                   <Link
