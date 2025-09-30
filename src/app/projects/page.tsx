@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { LinkPreview } from "@/components/ui/link-preview";
 import {
   ExternalLink,
   Github,
@@ -18,7 +18,7 @@ export default function Projects() {
       subtitle: "Event & Décor Rental Website",
       description:
         "A responsive event rental platform tailored for the Ghanaian market. Features booking inquiries, cart-based estimates, and PDF invoice generation with Cloudinary integration.",
-      image: "/projects/vony-events.jpg", // Add your project image
+      // image: "/projects/vony-events.jpg",
       tech: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudinary", "TypeScript"],
       category: "Freelance",
       status: "Ongoing",
@@ -33,8 +33,8 @@ export default function Projects() {
         "Modern UI aligned with company branding",
       ],
       links: {
-        live: "https://vony-events.com", // Update with actual link
-        github: null, // Set to GitHub URL if applicable
+        live: "https://vony-rentals.vercel.app",
+        github: null,
       },
     },
     {
@@ -43,7 +43,7 @@ export default function Projects() {
       subtitle: "Final Year Capstone Project",
       description:
         "A comprehensive mobile application developed as part of Academic City University's capstone project. Built with React Native and integrated with a NestJS backend.",
-      image: "/projects/capstone.jpg", // Add your project image
+      // image: "/projects/capstone.jpg",
       tech: [
         "React Native",
         "Expo SDK 53",
@@ -69,8 +69,8 @@ export default function Projects() {
         "Collaborative team project (Frontend, Backend, Security, Mobile)",
       ],
       links: {
-        live: "https://app-link.com", // Update with actual link
-        github: "https://github.com/edmundphillips/capstone-project", // Update with actual link
+        live: "https://app-link.com",
+        github: null,
       },
     },
   ];
@@ -78,7 +78,6 @@ export default function Projects() {
   return (
     <div className='min-h-screen'>
       <div className='container mx-auto px-4 py-16 max-w-6xl'>
-        {/* Hero Section */}
         <section className='mb-24'>
           <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-12 shadow-2xl'>
             <h1 className='text-5xl md:text-6xl font-semibold mb-6 tracking-tight'>
@@ -92,8 +91,6 @@ export default function Projects() {
             </p>
           </div>
         </section>
-
-        {/* Projects Grid */}
         <section className='mb-16'>
           <div className='space-y-16'>
             {projects.map((project, idx) => (
@@ -101,33 +98,46 @@ export default function Projects() {
                 key={project.id}
                 className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300'
               >
-                {/* Project Image */}
-                <div className='relative h-64 md:h-96 bg-gradient-to-br from-foreground/5 to-foreground/10'>
-                  {/* Placeholder - Replace with actual image */}
-                  <div className='absolute inset-0 flex items-center justify-center'>
-                    <div className='text-center'>
-                      <div className='w-24 h-24 mx-auto mb-4 rounded-2xl bg-foreground/10 flex items-center justify-center'>
-                        {project.category === "Freelance" ? (
-                          <Briefcase className='h-12 w-12 text-apple-blue' />
-                        ) : (
-                          <GraduationCap className='h-12 w-12 text-apple-blue' />
-                        )}
+                <div className='relative h-64 md:h-96 bg-gradient-to-br from-foreground/5 to-foreground/10 overflow-hidden'>
+                  {project.links.live ? (
+                    <LinkPreview
+                      url={project.links.live}
+                      width={1200}
+                      height={800}
+                      className='absolute inset-0 w-full h-full rounded-none border-0 shadow-none'
+                      alt={`${project.title} website preview`}
+                      fallbackContent={
+                        <div className='text-center'>
+                          <div className='w-24 h-24 mx-auto mb-4 rounded-2xl bg-foreground/10 flex items-center justify-center'>
+                            {project.category === "Freelance" ? (
+                              <Briefcase className='h-12 w-12 text-apple-blue' />
+                            ) : (
+                              <GraduationCap className='h-12 w-12 text-apple-blue' />
+                            )}
+                          </div>
+                          <p className='text-sm text-foreground/50'>
+                            {project.title}
+                          </p>
+                        </div>
+                      }
+                    />
+                  ) : (
+                    // Fallback for projects without live links
+                    <div className='absolute inset-0 flex items-center justify-center'>
+                      <div className='text-center'>
+                        <div className='w-24 h-24 mx-auto mb-4 rounded-2xl bg-foreground/10 flex items-center justify-center'>
+                          {project.category === "Freelance" ? (
+                            <Briefcase className='h-12 w-12 text-apple-blue' />
+                          ) : (
+                            <GraduationCap className='h-12 w-12 text-apple-blue' />
+                          )}
+                        </div>
+                        <p className='text-sm text-foreground/50'>
+                          {project.title}
+                        </p>
                       </div>
-                      <p className='text-sm text-foreground/50'>
-                        Project Screenshot
-                      </p>
                     </div>
-                  </div>
-                  {/* When you have images, use this instead:
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                  />
-                  */}
-
-                  {/* Status Badge */}
+                  )}
                   <div className='absolute top-6 right-6'>
                     <Badge
                       variant={
@@ -139,10 +149,7 @@ export default function Projects() {
                     </Badge>
                   </div>
                 </div>
-
-                {/* Project Content */}
                 <div className='p-8 md:p-12'>
-                  {/* Header */}
                   <div className='flex flex-wrap items-start justify-between gap-4 mb-6'>
                     <div>
                       <div className='flex items-center gap-3 mb-2'>
@@ -165,13 +172,9 @@ export default function Projects() {
                       </p>
                     </div>
                   </div>
-
-                  {/* Description */}
                   <p className='text-lg text-foreground/70 leading-relaxed mb-8'>
                     {project.description}
                   </p>
-
-                  {/* Key Features */}
                   <div className='mb-8'>
                     <h3 className='text-xl font-semibold mb-4'>Key Features</h3>
                     <ul className='grid md:grid-cols-2 gap-3'>
@@ -183,8 +186,6 @@ export default function Projects() {
                       ))}
                     </ul>
                   </div>
-
-                  {/* Tech Stack */}
                   <div className='mb-8'>
                     <h3 className='text-xl font-semibold mb-4'>
                       Technologies Used
@@ -201,8 +202,6 @@ export default function Projects() {
                       ))}
                     </div>
                   </div>
-
-                  {/* Links */}
                   <div className='flex flex-wrap gap-4'>
                     {project.links.live && (
                       <Button
@@ -243,8 +242,6 @@ export default function Projects() {
             ))}
           </div>
         </section>
-
-        {/* More Projects Coming Soon */}
         <section>
           <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-12 shadow-xl text-center'>
             <h2 className='text-3xl font-semibold mb-4 tracking-tight'>

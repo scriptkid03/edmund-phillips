@@ -43,7 +43,7 @@ export default function RootLayout({
           <div className='font-mono'>
             <Header />
 
-            {children}
+            <div className='lg:pt-10'>{children}</div>
           </div>
         </ThemeProvider>
       </body>

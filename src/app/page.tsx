@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Home() {
@@ -41,8 +40,7 @@ export default function Home() {
   ];
 
   return (
-    <div className='container mx-auto px-4 py-16 max-w-6xl'>
-      {/* Hero Section with Glassmorphism */}
+    <div className='container mx-auto px-4 py-16 max-md:py-8 max-w-6xl'>
       <section className='mb-24'>
         <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-12 shadow-2xl'>
           <h1 className='text-5xl md:text-6xl font-semibold mb-6 tracking-tight'>
@@ -112,8 +110,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Featured Projects */}
       <section className='mb-24'>
         <div className='flex items-center justify-between mb-10'>
           <h2 className='text-4xl font-semibold tracking-tight'>
@@ -162,8 +158,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* About Preview */}
       <section className='mb-24'>
         <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-12 shadow-xl'>
           <h2 className='text-4xl font-semibold mb-8 tracking-tight'>
@@ -191,8 +185,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Skills */}
       <section>
         <h2 className='text-4xl font-semibold mb-10 tracking-tight'>
           Skills & Technologies

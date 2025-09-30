@@ -10,6 +10,7 @@ import {
   Globe,
   Zap,
 } from "lucide-react";
+import EducationSection from "@/components/education";
 
 export default function About() {
   const technicalSkills = [
@@ -101,7 +102,7 @@ export default function About() {
         </section>
 
         {/* Education */}
-        <section className='mb-24'>
+        {/* <section className='mb-24'>
           <div className='flex items-center gap-3 mb-10'>
             <GraduationCap className='h-8 w-8 text-apple-blue' />
             <h2 className='text-4xl font-semibold tracking-tight'>Education</h2>
@@ -157,7 +158,8 @@ export default function About() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+        <EducationSection />
 
         {/* Work Experience */}
         <section className='mb-24'>
@@ -307,7 +309,7 @@ export default function About() {
             <div className='flex flex-wrap gap-4 justify-center'>
               <Button asChild size='lg' className='rounded-full shadow-lg'>
                 <Link href='/projects'>
-                  View My Projects <ArrowRight className='ml-2 h-4 w-4' />
+                  View My Work <ArrowRight className='ml-2 h-4 w-4' />
                 </Link>
               </Button>
               <Button

@@ -1,8 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import {
   Download,
   Mail,
@@ -12,82 +9,22 @@ import {
   Github,
   Linkedin,
   FileText,
-  GraduationCap,
-  Briefcase,
   Code2,
-  Award,
-  Calendar,
 } from "lucide-react";
+import EducationSection from "@/components/education";
+import ExperienceSection from "@/components/experience";
 
 export default function Resume() {
   const personalInfo = {
     name: "Edmund Kwame Odame Phillips",
     title: "Full-Stack Developer",
     email: "edmundkophillips@gmail.com",
-    phone: "+233 XX XXX XXXX", // Replace with actual phone
+    phone: "+233 20 896 8930",
     location: "Accra, Ghana",
-    website: "edmundphillips.dev", // Replace with actual website
-    github: "scriptkid03", // Replace with actual GitHub username
+    website: "edmund-phillips.vercel.app",
+    github: "scriptkid03",
     linkedin: "edmund-phillips", // Replace with actual LinkedIn username
   };
-
-  const education = [
-    {
-      institution: "Academic City University",
-      degree: "B.Sc. Computer Science",
-      period: "Jan. 2022 - Jun. 2025",
-      location: "Accra, Ghana",
-      logo: "/img/acity.png",
-      coursework: [
-        "Computer Systems Programming",
-        "Software Engineering",
-        "Project Management",
-        "Web Technologies",
-        "Human Computer Interaction",
-        "Cloud Computing",
-      ],
-    },
-    {
-      institution: "Aggrey Memorial A.M.E Zion SHS",
-      degree: "General Science",
-      period: "Jan. 2022 - Jun. 2025",
-      location: "Cape Coast, Ghana",
-      logo: "/img/aggrey.jpg",
-      coursework: [
-        "Elective ICT",
-        "Elective Mathematics",
-        "Physics",
-        "Chemistry",
-      ],
-    },
-  ];
-
-  const experience = [
-    {
-      title: "Software Engineering Intern",
-      company: "Stanbic Bank Ghana",
-      period: "Jun. 2024 – Jul. 2024",
-      location: "Accra, Ghana",
-      achievements: [
-        "Developed and maintained responsive web applications using Angular, HTML, CSS, JavaScript, and TypeScript",
-        "Collaborated with designers to translate mockups and prototypes into functional user interfaces",
-        "Explored backend development concepts using Spring Boot, gaining foundational knowledge in API creation",
-        "Worked with backend teams to ensure seamless integration between frontend and backend functionality",
-      ],
-    },
-    {
-      title: "Software Engineering Intern",
-      company: "Stanbic Bank Ghana",
-      period: "Jun. 2023 – Jul. 2023",
-      location: "Accra, Ghana",
-      achievements: [
-        "Led requirements gathering and conducted stakeholder interviews for process improvement identification",
-        "Collaborated with UI/UX designers to create intuitive and user-friendly interfaces",
-        "Focused on frontend development using Angular, HTML, CSS, JavaScript, and TypeScript",
-        "Ensured seamless coordination between requirements, design, and development stages",
-      ],
-    },
-  ];
 
   const technicalSkills = {
     "Frontend Development": [
@@ -133,7 +70,6 @@ export default function Resume() {
   return (
     <div className='min-h-screen'>
       <div className='container mx-auto px-4 py-16 max-w-5xl'>
-        {/* Header with Download */}
         <section className='mb-16'>
           <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-8 shadow-2xl'>
             <div className='flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8'>
@@ -150,25 +86,32 @@ export default function Resume() {
                   Science with hands-on experience in frontend and backend
                   development.
                 </p>
-
-                {/* Contact Info */}
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 text-foreground/70'>
-                  <div className='flex items-center gap-3'>
+                  <Link
+                    href={"mailto:edmundkophillips@gmail.com"}
+                    className='flex items-center gap-3'
+                  >
                     <Mail className='h-5 w-5 text-apple-blue' />
                     <span className='text-sm'>{personalInfo.email}</span>
-                  </div>
-                  <div className='flex items-center gap-3'>
+                  </Link>
+                  <Link
+                    href={"tel:+233208968930"}
+                    className='flex items-center gap-3'
+                  >
                     <Phone className='h-5 w-5 text-apple-blue' />
                     <span className='text-sm'>{personalInfo.phone}</span>
-                  </div>
+                  </Link>
                   <div className='flex items-center gap-3'>
                     <MapPin className='h-5 w-5 text-apple-blue' />
                     <span className='text-sm'>{personalInfo.location}</span>
                   </div>
-                  <div className='flex items-center gap-3'>
+                  <Link
+                    href={"https://www.edmund-phillips.vercel.app"}
+                    className='flex items-center gap-3'
+                  >
                     <Globe className='h-5 w-5 text-apple-blue' />
                     <span className='text-sm'>{personalInfo.website}</span>
-                  </div>
+                  </Link>
                 </div>
               </div>
 
@@ -200,124 +143,9 @@ export default function Resume() {
             </div>
           </div>
         </section>
-
-        {/* Education */}
-        <section className='mb-16'>
-          <div className='flex items-center gap-3 mb-8'>
-            <GraduationCap className='h-8 w-8 text-apple-blue' />
-            <h2 className='text-3xl font-semibold tracking-tight'>Education</h2>
-          </div>
-          <div className='space-y-6'>
-            {education.map((edu, idx) => (
-              <div
-                key={idx}
-                className='backdrop-blur-xl bg-glass border border-glass-border rounded-2xl p-8 shadow-xl'
-              >
-                <div className='flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6'>
-                  <div className='flex items-start gap-4'>
-                    <div className='w-16 h-16 rounded-xl bg-white p-2 shadow-md flex-shrink-0'>
-                      <Image
-                        src={edu.logo}
-                        alt='Academic City University'
-                        width={64}
-                        height={64}
-                        className='w-full h-full object-contain'
-                      />
-                    </div>
-                    <div>
-                      <h3 className='text-xl font-semibold mb-1'>
-                        {edu.institution}
-                      </h3>
-                      <p className='text-lg text-foreground/70 mb-1'>
-                        {edu.degree}
-                      </p>
-                      <p className='text-foreground/60'>{edu.location}</p>
-                    </div>
-                  </div>
-                  <div className='text-foreground/70 md:text-right'>
-                    <p className='font-medium'>{edu.period}</p>
-                  </div>
-                </div>
-                <div>
-                  <p className='text-sm font-medium text-foreground/60 mb-3'>
-                    RELEVANT COURSEWORK
-                  </p>
-                  <div className='flex flex-wrap gap-2'>
-                    {edu.coursework.map((course) => (
-                      <Badge
-                        key={course}
-                        variant='secondary'
-                        className='rounded-full text-xs'
-                      >
-                        {course}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Work Experience */}
-        <section className='mb-16'>
-          <div className='flex items-center gap-3 mb-8'>
-            <Briefcase className='h-8 w-8 text-apple-blue' />
-            <h2 className='text-3xl font-semibold tracking-tight'>
-              Work Experience
-            </h2>
-          </div>
-          <div className='space-y-6'>
-            {experience.map((job, idx) => (
-              <div
-                key={idx}
-                className='backdrop-blur-xl bg-glass border border-glass-border rounded-2xl p-8 shadow-xl'
-              >
-                <div className='flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6'>
-                  <div className='flex items-start gap-4'>
-                    <div className='w-12 h-12 rounded-xl bg-white p-1 shadow-md flex-shrink-0'>
-                      <Image
-                        src='/img/stanbic.jpg'
-                        alt={job.company}
-                        width={48}
-                        height={48}
-                        className='w-full h-full object-contain rounded-lg'
-                      />
-                    </div>
-                    <div>
-                      <h3 className='text-xl font-semibold mb-1'>
-                        {job.title}
-                      </h3>
-                      <p className='text-lg text-apple-blue font-medium mb-1'>
-                        {job.company}
-                      </p>
-                      <p className='text-sm text-foreground/60'>
-                        {job.location}
-                      </p>
-                    </div>
-                  </div>
-                  <div className='text-foreground/70 md:text-right'>
-                    <p className='font-medium'>{job.period}</p>
-                  </div>
-                </div>
-                <ul className='space-y-2'>
-                  {job.achievements.map((achievement, i) => (
-                    <li
-                      key={i}
-                      className='flex gap-3 text-foreground/70 text-sm leading-relaxed'
-                    >
-                      <span className='text-apple-blue mt-1.5 text-xs'>●</span>
-                      <span>{achievement}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
+        <EducationSection />
+        <ExperienceSection />
         <div className='grid lg:grid-cols-2 gap-8'>
-          {/* Technical Skills */}
           <section className='mb-16'>
             <div className='flex items-center gap-3 mb-8'>
               <Code2 className='h-8 w-8 text-apple-blue' />
@@ -345,11 +173,8 @@ export default function Resume() {
               ))}
             </div>
           </section>
-
-          {/* Soft Skills & Languages */}
           <section className='mb-16'>
             <div className='space-y-8'>
-              {/* Soft Skills */}
               <div>
                 <h2 className='text-2xl font-semibold mb-6 tracking-tight'>
                   Soft Skills
@@ -367,8 +192,6 @@ export default function Resume() {
                   </div>
                 </div>
               </div>
-
-              {/* Languages */}
               <div>
                 <h2 className='text-2xl font-semibold mb-6 tracking-tight'>
                   Languages
@@ -389,8 +212,6 @@ export default function Resume() {
                   </div>
                 </div>
               </div>
-
-              {/* Interests */}
               <div>
                 <h2 className='text-2xl font-semibold mb-6 tracking-tight'>
                   Interests
@@ -412,7 +233,6 @@ export default function Resume() {
           </section>
         </div>
 
-        {/* Footer CTA */}
         <section className='mt-16'>
           <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-12 shadow-2xl text-center'>
             <h2 className='text-3xl font-semibold mb-4 tracking-tight'>
