@@ -1,70 +1,87 @@
+"use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const projects = [
   {
-    title: "Hospital Appointment System",
-    description: "Patients book appointments, staff upload lab results.",
-    tech: ["Next.js", "MongoDB", "Tailwind"],
-    demo: "#",
-    github: "#",
+    title: "Vony Events & Rentals",
+    role: "Frontend Developer (Freelance)",
+    desc: "Responsive platform for event & décor rentals tailored for the Ghanaian market. Features cart-based estimates, Cloudinary-powered PDF invoices, and a modern UI.",
+    tech: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudinary"],
+    github: "https://github.com/your-link",
+    live: "https://your-link.com",
   },
   {
-    title: "Event & Décor Rental Website",
-    description: "Event booking platform tailored for Ghana’s market.",
-    tech: ["Next.js", "Cloudinary", "Prisma"],
-    demo: "#",
-    github: "#",
+    title: "Prime-Flow CMS (Capstone Project)",
+    role: "Mobile Developer",
+    desc: "Enterprise-grade multi-tenant CMS mobile app. Built with React Native (Expo), Auth0 authentication, real-time updates via Socket.IO, and NestJS backend integration.",
+    tech: ["React Native", "Expo", "NestJS", "Prisma", "Socket.IO"],
+    github: "https://github.com/your-link",
+    live: "https://your-link.com",
   },
   {
-    title: "Campus Event Hub",
-    description: "Angular + Prisma app for managing campus events.",
-    tech: ["Angular", "Prisma", "MongoDB"],
-    demo: "#",
-    github: "#",
+    title: "Stanbic Bank Ghana (Internship)",
+    role: "Software Engineering Intern",
+    desc: "Contributed to responsive Angular applications. Translated Figma mockups into UI components and explored backend integration with Spring Boot APIs.",
+    tech: ["Angular", "TypeScript", "Spring Boot", "Figma"],
+    github: "",
+    live: "",
   },
 ];
 
 export default function ProjectsPage() {
   return (
-    <section className="max-w-6xl mx-auto p-6 lg:mt-32">
-      <h1 className="text-3xl font-bold mb-8">Projects</h1>
+    <div className='relative max-w-5xl mx-auto px-6 py-16 space-y-16'>
+      {/* Hero */}
+      <section className='text-center space-y-3'>
+        <h1 className='text-4xl font-bold'>Projects</h1>
+        <p className='text-lg text-muted-foreground'>
+          A selection of my work across web, mobile, and freelance projects.
+        </p>
+      </section>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, i) => (
-          <Card key={i} className="hover:shadow-lg transition-shadow">
+      {/* Projects Grid */}
+      <section className='grid md:grid-cols-2 gap-8'>
+        {projects.map((proj) => (
+          <Card
+            key={proj.title}
+            className='glass border border-[--glass-border] hover:shadow-lg transition-all hover:-translate-y-1'
+          >
             <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
+              <CardTitle>{proj.title}</CardTitle>
+              <p className='text-sm text-muted-foreground'>{proj.role}</p>
             </CardHeader>
-            <CardContent className="space-y-3">
-              <p className="text-sm text-muted-foreground">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((t, j) => (
-                  <Badge key={j} variant="secondary">
+            <CardContent className='space-y-4'>
+              <p className='text-sm'>{proj.desc}</p>
+              <div className='flex flex-wrap gap-2'>
+                {proj.tech.map((t) => (
+                  <Badge key={t} variant='secondary'>
                     {t}
                   </Badge>
                 ))}
               </div>
-              <div className="flex gap-4 text-sm">
-                <a
-                  href={project.demo}
-                  className="text-blue-600 hover:underline"
-                >
-                  Live Demo
-                </a>
-                <a
-                  href={project.github}
-                  className="text-blue-600 hover:underline"
-                >
-                  GitHub
-                </a>
+              <div className='flex gap-3 pt-2'>
+                {proj.live && (
+                  <Button asChild variant='default' size='sm'>
+                    <Link href={proj.live} target='_blank'>
+                      View Live
+                    </Link>
+                  </Button>
+                )}
+                {proj.github && (
+                  <Button asChild variant='outline' size='sm'>
+                    <Link href={proj.github} target='_blank'>
+                      GitHub
+                    </Link>
+                  </Button>
+                )}
               </div>
             </CardContent>
           </Card>
         ))}
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

@@ -1,52 +1,62 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { motion } from "framer-motion";
+// import PageTransition from "@/components/PageTransition";
 
 export default function ResumePage() {
   return (
-    <section className="max-w-3xl mx-auto p-6 space-y-6 lg:mt-32">
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Resume</h1>
-        <Button asChild>
-          <a href="/resume.pdf" download>
-            Download PDF
-          </a>
-        </Button>
-      </div>
+    // <PageTransition>
+    <section className='max-w-3xl mx-auto px-6 py-16'>
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, ease: "easeOut" },
+        }}
+        className='text-4xl font-bold mb-6'
+      >
+        Resume
+      </motion.h1>
 
-      <div className="space-y-4">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, ease: "easeOut", delay: 0.2 },
+        }}
+        className='space-y-8'
+      >
+        {/* Example Resume Sections */}
         <div>
-          <h2 className="text-xl font-semibold">Summary</h2>
-          <p className="text-muted-foreground">
-            Frontend developer skilled in building modern, responsive, and
-            user-friendly applications using Next.js, React Native, Angular, and
-            MongoDB. Passionate about clean UI and smooth user experiences.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-xl font-semibold">Skills</h2>
-          <ul className="list-disc list-inside text-muted-foreground">
-            <li>Frontend: React, Next.js, Angular, Tailwind, NativeWind</li>
-            <li>Backend: Node.js, Prisma, MongoDB</li>
-            <li>Tools: Git/GitHub, Cloudinary, Figma</li>
+          <h2 className='text-xl font-semibold'>Experience</h2>
+          <ul className='mt-2 space-y-4'>
+            <li>
+              <p className='font-medium'>Mobile Developer – Prime-Flow CMS</p>
+              <p className='text-sm text-gray-500 dark:text-gray-400'>
+                Built the React Native mobile app with Auth0 integration,
+                dark/light mode, and Expo Router v5.
+              </p>
+            </li>
+            <li>
+              <p className='font-medium'>Frontend Developer – Freelance</p>
+              <p className='text-sm text-gray-500 dark:text-gray-400'>
+                Developed responsive web apps with Next.js, TailwindCSS, and
+                MongoDB.
+              </p>
+            </li>
           </ul>
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold">Projects</h2>
-          <ul className="list-disc list-inside text-muted-foreground">
-            <li>Hospital Appointment System – Next.js, MongoDB</li>
-            <li>Event & Décor Rental Website – Next.js, Prisma, Cloudinary</li>
-            <li>Campus Event Hub – Angular, Prisma</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-xl font-semibold">Education</h2>
-          <p className="text-muted-foreground">
-            [Your University], [Degree/Program]
+          <h2 className='text-xl font-semibold'>Education</h2>
+          <p className='mt-2'>
+            BSc. Computer Science – Academic City University College
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
+    // </PageTransition>
   );
 }
