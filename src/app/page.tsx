@@ -1,12 +1,5 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
@@ -51,9 +44,9 @@ export default function Home() {
     <div className='container mx-auto px-4 py-16 max-w-6xl'>
       {/* Hero Section with Glassmorphism */}
       <section className='mb-24'>
-        <div className='backdrop-blur-xl bg-white/30 dark:bg-black/30 border border-white/20 dark:border-white/10 rounded-3xl p-12 shadow-2xl'>
+        <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-12 shadow-2xl'>
           <h1 className='text-5xl md:text-6xl font-semibold mb-6 tracking-tight'>
-            Hi, I'm Your Name
+            Hi, I'm Edmund Phillips
           </h1>
           <p className='text-xl text-foreground/70 mb-8 max-w-2xl leading-relaxed'>
             Full-Stack Developer crafting elegant solutions to complex problems.
@@ -61,11 +54,7 @@ export default function Home() {
             difference.
           </p>
           <div className='flex flex-wrap gap-4'>
-            <Button
-              asChild
-              size='lg'
-              className='rounded-full bg-foreground text-background hover:bg-foreground/90 shadow-lg'
-            >
+            <Button asChild size='lg' className='rounded-full shadow-lg'>
               <Link href='/projects'>
                 View My Work <ArrowRight className='ml-2 h-4 w-4' />
               </Link>
@@ -90,6 +79,7 @@ export default function Home() {
                 href='https://github.com'
                 target='_blank'
                 rel='noopener noreferrer'
+                aria-label='GitHub'
               >
                 <Github className='h-5 w-5' />
               </a>
@@ -104,6 +94,7 @@ export default function Home() {
                 href='https://linkedin.com'
                 target='_blank'
                 rel='noopener noreferrer'
+                aria-label='LinkedIn'
               >
                 <Linkedin className='h-5 w-5' />
               </a>
@@ -114,7 +105,7 @@ export default function Home() {
               className='rounded-full hover:bg-foreground/10 backdrop-blur-sm'
               asChild
             >
-              <a href='mailto:your.email@example.com'>
+              <a href='mailto:your.email@example.com' aria-label='Email'>
                 <Mail className='h-5 w-5' />
               </a>
             </Button>
@@ -133,7 +124,10 @@ export default function Home() {
             className='rounded-full hover:bg-foreground/5'
             asChild
           >
-            <Link href='/projects'>
+            <Link
+              href='/projects'
+              className='text-apple-blue hover:text-apple-blue-hover'
+            >
               View All <ArrowRight className='ml-2 h-4 w-4' />
             </Link>
           </Button>
@@ -142,7 +136,7 @@ export default function Home() {
           {featuredProjects.map((project, idx) => (
             <div
               key={idx}
-              className='group backdrop-blur-xl bg-white/50 dark:bg-black/50 border border-white/20 dark:border-white/10 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300'
+              className='group backdrop-blur-xl bg-glass border border-glass-border rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300'
             >
               <h3 className='text-xl font-semibold mb-3'>{project.title}</h3>
               <p className='text-foreground/70 mb-6 leading-relaxed'>
@@ -160,7 +154,7 @@ export default function Home() {
               </div>
               <Link
                 href={project.link}
-                className='inline-flex items-center text-sm font-medium hover:underline underline-offset-4'
+                className='inline-flex items-center text-sm font-medium text-apple-blue hover:text-apple-blue-hover transition-colors'
               >
                 Learn More <ArrowRight className='ml-1 h-3 w-3' />
               </Link>
@@ -171,7 +165,7 @@ export default function Home() {
 
       {/* About Preview */}
       <section className='mb-24'>
-        <div className='backdrop-blur-xl bg-white/30 dark:bg-black/30 border border-white/20 dark:border-white/10 rounded-3xl p-12 shadow-xl'>
+        <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-12 shadow-xl'>
           <h2 className='text-4xl font-semibold mb-8 tracking-tight'>
             About Me
           </h2>
@@ -207,7 +201,7 @@ export default function Home() {
           {skills.map((skill) => (
             <span
               key={skill}
-              className='px-5 py-2.5 text-sm font-medium rounded-full backdrop-blur-xl bg-white/50 dark:bg-black/50 border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200'
+              className='px-5 py-2.5 text-sm font-medium rounded-full backdrop-blur-xl bg-glass border border-glass-border shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200'
             >
               {skill}
             </span>
