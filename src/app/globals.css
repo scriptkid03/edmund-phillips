@@ -118,5 +118,15 @@
   }
   body {
     @apply bg-background text-foreground;
+    background: linear-gradient(to bottom, #f0f0f0, #ffffff) fixed;
+  }
+
+  .dark {
+    --primary: oklch(0.72 0.18 45); /* Orange accent */
+    --sidebar-primary: oklch(0.72 0.18 45);
+  }
+
+  .dark body {
+    background: linear-gradient(to bottom, #0f0a08, #1f1612) fixed;
   }
 }

@@ -1,61 +1,219 @@
-"use client";
-
-import { TypeAnimation } from "react-type-animation";
-import { Button } from "@/components/ui/button";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { BlurFade } from "@/components/magicui/blur-fade";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
-const BLUR_FADE_DELAY = 0.4;
+export default function Home() {
+  const featuredProjects = [
+    {
+      title: "E-Commerce Platform",
+      description:
+        "A full-stack e-commerce solution with payment integration and admin dashboard.",
+      tech: ["Next.js", "TypeScript", "Prisma", "Stripe"],
+      link: "/projects/ecommerce",
+    },
+    {
+      title: "Task Management App",
+      description:
+        "Real-time collaborative task manager with team workspaces and notifications.",
+      tech: ["React", "Node.js", "Socket.io", "MongoDB"],
+      link: "/projects/task-manager",
+    },
+    {
+      title: "Analytics Dashboard",
+      description:
+        "Data visualization dashboard for tracking business metrics and KPIs.",
+      tech: ["Next.js", "Recharts", "PostgreSQL", "TailwindCSS"],
+      link: "/projects/analytics",
+    },
+  ];
 
-export default function HomePage() {
+  const skills = [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "TailwindCSS",
+    "PostgreSQL",
+    "MongoDB",
+    "Git",
+  ];
+
   return (
-    <main className='min-h-screen flex flex-col justify-center items-center text-center px-4'>
-      <BlurFadeText
-        delay={BLUR_FADE_DELAY}
-        className='text-4xl md:text-6xl font-extrabold tracking-tight'
-        yOffset={10}
-        text={`Hi, I'm Edmund 👋`}
-      />
-
-      <div className='flex flex-col items-center gap-10'>
-        <BlurFade delay={BLUR_FADE_DELAY + 0.2} offset={18} direction='down'>
-          <TypeAnimation
-            sequence={[
-              2000,
-              "Frontend Developer",
-              1500,
-              "Aspiring Mobile App Developer",
-              1500,
-              "UI/UX Enthusiast",
-              1500,
-              "Problem Solver",
-              1500,
-            ]}
-            wrapper='span'
-            speed={50}
-            repeat={Infinity}
-            className='text-xl md:text-2xl font-medium mb-8'
-          />
-        </BlurFade>
-
-        <BlurFade delay={BLUR_FADE_DELAY + 0.4} offset={20} direction='down'>
-          <div className='flex gap-4'>
-            <Link
-              href={"/projects"}
-              className='flex justify-center items-center py-2 px-3 rounded-full text-lg font-semibold bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 cursor-pointer transition-all'
+    <div className='container mx-auto px-4 py-16 max-w-6xl'>
+      {/* Hero Section with Glassmorphism */}
+      <section className='mb-24'>
+        <div className='backdrop-blur-xl bg-white/30 dark:bg-black/30 border border-white/20 dark:border-white/10 rounded-3xl p-12 shadow-2xl'>
+          <h1 className='text-5xl md:text-6xl font-semibold mb-6 tracking-tight'>
+            Hi, I'm Your Name
+          </h1>
+          <p className='text-xl text-foreground/70 mb-8 max-w-2xl leading-relaxed'>
+            Full-Stack Developer crafting elegant solutions to complex problems.
+            Passionate about building user-centric applications that make a
+            difference.
+          </p>
+          <div className='flex flex-wrap gap-4'>
+            <Button
+              asChild
+              size='lg'
+              className='rounded-full bg-foreground text-background hover:bg-foreground/90 shadow-lg'
             >
-              View My Work
-            </Link>
-            <Link
-              href={"/projects"}
-              className='flex justify-center items-center py-2 px-3 rounded-full text-lg font-semibold border shadow-xs hover:bg-primary/90 cursor-pointer transition-all'
+              <Link href='/projects'>
+                View My Work <ArrowRight className='ml-2 h-4 w-4' />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant='outline'
+              size='lg'
+              className='rounded-full border-foreground/20 hover:bg-foreground/5 backdrop-blur-sm'
             >
-              Contact Me
-            </Link>
+              <Link href='/resume'>Resume</Link>
+            </Button>
           </div>
-        </BlurFade>
-      </div>
-    </main>
+          <div className='flex gap-3 mt-8'>
+            <Button
+              variant='ghost'
+              size='icon'
+              className='rounded-full hover:bg-foreground/10 backdrop-blur-sm'
+              asChild
+            >
+              <a
+                href='https://github.com'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <Github className='h-5 w-5' />
+              </a>
+            </Button>
+            <Button
+              variant='ghost'
+              size='icon'
+              className='rounded-full hover:bg-foreground/10 backdrop-blur-sm'
+              asChild
+            >
+              <a
+                href='https://linkedin.com'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <Linkedin className='h-5 w-5' />
+              </a>
+            </Button>
+            <Button
+              variant='ghost'
+              size='icon'
+              className='rounded-full hover:bg-foreground/10 backdrop-blur-sm'
+              asChild
+            >
+              <a href='mailto:your.email@example.com'>
+                <Mail className='h-5 w-5' />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className='mb-24'>
+        <div className='flex items-center justify-between mb-10'>
+          <h2 className='text-4xl font-semibold tracking-tight'>
+            Featured Projects
+          </h2>
+          <Button
+            variant='ghost'
+            className='rounded-full hover:bg-foreground/5'
+            asChild
+          >
+            <Link href='/projects'>
+              View All <ArrowRight className='ml-2 h-4 w-4' />
+            </Link>
+          </Button>
+        </div>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          {featuredProjects.map((project, idx) => (
+            <div
+              key={idx}
+              className='group backdrop-blur-xl bg-white/50 dark:bg-black/50 border border-white/20 dark:border-white/10 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300'
+            >
+              <h3 className='text-xl font-semibold mb-3'>{project.title}</h3>
+              <p className='text-foreground/70 mb-6 leading-relaxed'>
+                {project.description}
+              </p>
+              <div className='flex flex-wrap gap-2 mb-6'>
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className='px-3 py-1 text-xs font-medium rounded-full bg-foreground/10 backdrop-blur-sm border border-foreground/10'
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <Link
+                href={project.link}
+                className='inline-flex items-center text-sm font-medium hover:underline underline-offset-4'
+              >
+                Learn More <ArrowRight className='ml-1 h-3 w-3' />
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* About Preview */}
+      <section className='mb-24'>
+        <div className='backdrop-blur-xl bg-white/30 dark:bg-black/30 border border-white/20 dark:border-white/10 rounded-3xl p-12 shadow-xl'>
+          <h2 className='text-4xl font-semibold mb-8 tracking-tight'>
+            About Me
+          </h2>
+          <div className='max-w-3xl'>
+            <p className='text-lg text-foreground/70 mb-4 leading-relaxed'>
+              I'm a developer with a passion for creating seamless web
+              experiences. With expertise in modern JavaScript frameworks and a
+              keen eye for design, I build applications that are both functional
+              and beautiful.
+            </p>
+            <p className='text-lg text-foreground/70 mb-8 leading-relaxed'>
+              When I'm not coding, you'll find me exploring new technologies,
+              contributing to open source, or sharing what I've learned with the
+              community.
+            </p>
+            <Button
+              variant='outline'
+              className='rounded-full border-foreground/20 hover:bg-foreground/5'
+              asChild
+            >
+              <Link href='/about'>More About Me</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section>
+        <h2 className='text-4xl font-semibold mb-10 tracking-tight'>
+          Skills & Technologies
+        </h2>
+        <div className='flex flex-wrap gap-3'>
+          {skills.map((skill) => (
+            <span
+              key={skill}
+              className='px-5 py-2.5 text-sm font-medium rounded-full backdrop-blur-xl bg-white/50 dark:bg-black/50 border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200'
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

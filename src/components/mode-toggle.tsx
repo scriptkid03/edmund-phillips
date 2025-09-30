@@ -22,17 +22,17 @@ export function ModeToggle() {
 
   return (
     <Button
-      variant="ghost"
-      size="icon"
-      className="rounded-full border-l"
+      variant='ghost'
+      size='icon'
+      className='rounded-full border-l-2'
       onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
     >
       {currentTheme === "dark" ? (
-        <Sun className="h-[1.2rem] w-[1.2rem] transition-all" />
+        <Sun className='h-[1.2rem] w-[1.2rem] transition-all' />
       ) : (
-        <Moon className="h-[1.2rem] w-[1.2rem] transition-all" />
+        <Moon className='h-[1.2rem] w-[1.2rem] transition-all' />
       )}
-      <span className="sr-only">Toggle theme</span>
+      <span className='sr-only'>Toggle theme</span>
     </Button>
   );
 }
