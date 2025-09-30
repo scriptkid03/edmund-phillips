@@ -225,9 +225,7 @@
   --card-foreground: oklch(0.965 0 0);
   --popover: oklch(0.18 0 0);
   --popover-foreground: oklch(0.965 0 0);
-  --primary: oklch(
-    0.965 0 0
-  ); /* Athens Gray - same as foreground for buttons */
+  --primary: oklch(0.965 0 0); /* Athens Gray - same as foreground for buttons */
   --primary-foreground: oklch(0.117 0 0); /* Shark */
   --secondary: oklch(0.25 0 0);
   --secondary-foreground: oklch(0.965 0 0);

@@ -9,7 +9,7 @@ function usePreviewSource(
   width: number,
   height: number,
   isStatic: boolean,
-  staticImageSrc?: string
+  staticImageSrc?: string,
 ) {
   return useMemo(() => {
     if (isStatic) {
@@ -61,7 +61,7 @@ export const LinkPreview = ({
     width,
     height,
     isStatic,
-    imageSrc
+    imageSrc,
   );
 
   // Reset error state when source changes
@@ -85,17 +85,17 @@ export const LinkPreview = ({
         "relative overflow-hidden rounded-lg bg-white dark:bg-neutral-900",
         "border border-neutral-200 dark:border-neutral-700",
         "shadow-lg w-full h-full",
-        className
+        className,
       )}
     >
       {imageLoadFailed ? (
         // Fallback content when image fails to load
-        <div className='flex items-center justify-center w-full h-full bg-neutral-100 dark:bg-neutral-800'>
+        <div className="flex items-center justify-center w-full h-full bg-neutral-100 dark:bg-neutral-800">
           {fallbackContent || (
-            <div className='text-center text-neutral-500 dark:text-neutral-400 text-sm font-medium'>
-              <div className='mb-2'>🌐</div>
+            <div className="text-center text-neutral-500 dark:text-neutral-400 text-sm font-medium">
+              <div className="mb-2">🌐</div>
               <div>Preview unavailable</div>
-              <div className='text-xs mt-1 opacity-70'>
+              <div className="text-xs mt-1 opacity-70">
                 {new URL(url).hostname}
               </div>
             </div>
@@ -105,9 +105,9 @@ export const LinkPreview = ({
         <>
           {/* Loading state */}
           {isLoading && (
-            <div className='absolute inset-0 flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 z-10'>
-              <div className='text-center text-neutral-500 dark:text-neutral-400 text-sm'>
-                <div className='animate-spin w-6 h-6 border-2 border-neutral-300 border-t-neutral-600 rounded-full mx-auto mb-2'></div>
+            <div className="absolute inset-0 flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 z-10">
+              <div className="text-center text-neutral-500 dark:text-neutral-400 text-sm">
+                <div className="animate-spin w-6 h-6 border-2 border-neutral-300 border-t-neutral-600 rounded-full mx-auto mb-2"></div>
                 <div>Loading preview...</div>
               </div>
             </div>
@@ -116,11 +116,11 @@ export const LinkPreview = ({
           {/* Preview image */}
           <img
             src={finalImageSrc}
-            className='block w-full h-full object-cover bg-neutral-50 dark:bg-neutral-800'
+            className="block w-full h-full object-cover bg-neutral-50 dark:bg-neutral-800"
             alt={alt || `Link preview for ${url}`}
             onLoad={handleImageLoad}
             onError={handleImageError}
-            loading='lazy'
+            loading="lazy"
           />
         </>
       )}
