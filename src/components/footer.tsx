@@ -95,7 +95,7 @@ function Footer() {
               <Button type="submit" className="rounded-full">Subscribe</Button>
             </form>
           </div> */}
-            <div className='text-center mb-16'>
+            <div className='text-center max-md:mb-16'>
               <p className='text-sm text-muted-foreground'>
                 © {new Date().getFullYear()} Edmund Phillips.
                 <br className='lg:hidden' />
