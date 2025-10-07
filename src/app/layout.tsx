@@ -27,24 +27,24 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang='en'
+      lang="en"
       className={"scroll-smooth"}
       suppressHydrationWarning
-      data-scroll-behavior='smooth'
+      data-scroll-behavior="smooth"
     >
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
+          attribute="class"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className='font-mono'>
+          <div className="font-mono">
             <Header />
 
-            <div className='lg:pt-10'>{children}</div>
+            <div className="lg:pt-10">{children}</div>
             <Footer />
           </div>
         </ThemeProvider>

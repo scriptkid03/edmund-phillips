@@ -10,9 +10,9 @@ function Footer() {
   return (
     <>
       {/* <Separator /> */}
-      <footer className='py-8 border-t'>
-        <div className='container mx-auto px-4 md:px-6'>
-          <div className='flex flex-col items-center'>
+      <footer className="py-8 border-t">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col items-center">
             {/* <div className='mb-8 rounded-full bg-primary/10 p-8'>
               <Icons.logo className='icon-class w-6' />
               <Image
@@ -24,35 +24,35 @@ function Footer() {
                 className='w-6 z-50'
               />
             </div> */}
-            <div className='mb-3 flex space-x-4'>
+            <div className="mb-3 flex space-x-4">
               <Button
-                variant='outline'
-                size='icon'
-                className='rounded-full cursor-pointer'
+                variant="outline"
+                size="icon"
+                className="rounded-full cursor-pointer"
               >
-                <Link href='/' target='_blank' rel='noopener noreferrer'>
-                  <Linkedin className='h-5 w-5' />
-                  <span className='sr-only'>LinkedIn</span>
+                <Link href="/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                  <span className="sr-only">LinkedIn</span>
                 </Link>
               </Button>
               <Button
-                variant='outline'
-                size='icon'
-                className='rounded-full cursor-pointer'
+                variant="outline"
+                size="icon"
+                className="rounded-full cursor-pointer"
               >
-                <Link href='/' target='_blank' rel='noopener noreferrer'>
-                  <Mail className='h-5 w-5' />
-                  <span className='sr-only'>Mail</span>
+                <Link href="/" target="_blank" rel="noopener noreferrer">
+                  <Mail className="h-5 w-5" />
+                  <span className="sr-only">Mail</span>
                 </Link>
               </Button>
               <Button
-                variant='outline'
-                size='icon'
-                className='rounded-full cursor-pointer'
+                variant="outline"
+                size="icon"
+                className="rounded-full cursor-pointer"
               >
-                <Link href='/' target='_blank' rel='noopener noreferrer'>
-                  <Github className='h-5 w-5' />
-                  <span className='sr-only'>Github</span>
+                <Link href="/" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                  <span className="sr-only">Github</span>
                 </Link>
               </Button>
               {/* <Button
@@ -95,10 +95,10 @@ function Footer() {
               <Button type="submit" className="rounded-full">Subscribe</Button>
             </form>
           </div> */}
-            <div className='text-center max-md:mb-16'>
-              <p className='text-sm text-muted-foreground'>
+            <div className="text-center max-md:mb-16">
+              <p className="text-sm text-muted-foreground">
                 © {new Date().getFullYear()} Edmund Phillips.{" "}
-                <br className='lg:hidden' />
+                <br className="lg:hidden" />
                 All rights reserved.
               </p>
             </div>
