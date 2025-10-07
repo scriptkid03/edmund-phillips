@@ -22,8 +22,9 @@ export default function Resume() {
     phone: "+233 20 896 8930",
     location: "Accra, Ghana",
     website: "edmund-phillips.vercel.app",
-    github: "scriptkid03",
-    linkedin: "edmund-phillips", // Replace with actual LinkedIn username
+    github: "https://github.com/scriptkid03",
+    mail: "edmundkophillips@gmail.com",
+    linkedin: "https://www.linkedin.com/in/edmund-k-o-phillips/", // Replace with actual LinkedIn username
   };
 
   const technicalSkills = {
@@ -89,7 +90,7 @@ export default function Resume() {
                 </p>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 text-foreground/70'>
                   <Link
-                    href={"mailto:edmundkophillips@gmail.com"}
+                    href={`mailto:${personalInfo.email}`}
                     className='flex items-center gap-3'
                   >
                     <Mail className='h-5 w-5 text-apple-blue' />
@@ -107,7 +108,7 @@ export default function Resume() {
                     <span className='text-sm'>{personalInfo.location}</span>
                   </div>
                   <Link
-                    href={"https://www.edmund-phillips.vercel.app"}
+                    href={`https://www.${personalInfo.website}`}
                     className='flex items-center gap-3'
                   >
                     <Globe className='h-5 w-5 text-apple-blue' />
@@ -132,14 +133,38 @@ export default function Resume() {
                     size='icon'
                     className='rounded-full'
                   >
-                    <Github className='h-5 w-5' />
+                    <Link
+                      href={personalInfo.github}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <Github className='h-5 w-5' />
+                    </Link>
                   </Button>
                   <Button
                     variant='outline'
                     size='icon'
                     className='rounded-full'
                   >
-                    <Linkedin className='h-5 w-5' />
+                    <Link
+                      href={personalInfo.linkedin}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <Linkedin className='h-5 w-5' />
+                    </Link>
+                  </Button>
+                  <Button
+                    variant='outline'
+                    size='icon'
+                    className='rounded-full'
+                  >
+                    <Link
+                      href={`mailto:${personalInfo.email}`}
+                      className='flex items-center gap-3'
+                    >
+                      <Mail className='h-5 w-5' />
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -247,7 +272,7 @@ export default function Resume() {
             </p>
             <div className='flex flex-wrap gap-4 justify-center'>
               <Button asChild size='lg' className='rounded-full shadow-lg'>
-                <Link href='mailto:edmundkophillips@gmail.com'>
+                <Link href={`mailto:${personalInfo.email}`}>
                   <Mail className='mr-2 h-5 w-5' />
                   Contact Me
                 </Link>

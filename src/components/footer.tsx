@@ -97,7 +97,7 @@ function Footer() {
           </div> */}
             <div className='text-center max-md:mb-16'>
               <p className='text-sm text-muted-foreground'>
-                © {new Date().getFullYear()} Edmund Phillips.
+                © {new Date().getFullYear()} Edmund Phillips.{" "}
                 <br className='lg:hidden' />
                 All rights reserved.
               </p>
