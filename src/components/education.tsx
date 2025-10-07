@@ -50,25 +50,53 @@ export default function EducationSection() {
           >
             <div className='flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6'>
               <div className='flex items-start gap-4'>
-                <div className='w-16 h-16 rounded-xl bg-white p-2 shadow-md flex-shrink-0'>
-                  <Image
-                    src={edu.logo}
-                    alt='Academic City University'
-                    width={64}
-                    height={64}
-                    className='w-full h-full object-contain'
-                  />
+                <div className='max-md:hidden flex gap-4'>
+                  <div className='w-16 h-16 rounded-xl bg-white p-2 shadow-md flex-shrink-0'>
+                    <Image
+                      src={edu.logo}
+                      alt={edu.institution}
+                      width={64}
+                      height={64}
+                      className='w-full h-full object-contain'
+                    />
+                  </div>
+                  <div>
+                    <Link href={edu.instLink}>
+                      <h3 className='text-xl font-semibold mb-1'>
+                        {edu.institution}
+                      </h3>
+                    </Link>
+                    <p className='text-lg text-foreground/70 mb-1'>
+                      {edu.degree}
+                    </p>
+                    <p className='text-foreground/60'>{edu.location}</p>
+                  </div>
                 </div>
-                <div>
-                  <Link href={edu.instLink}>
-                    <h3 className='text-xl font-semibold mb-1'>
-                      {edu.institution}
-                    </h3>
-                  </Link>
-                  <p className='text-lg text-foreground/70 mb-1'>
-                    {edu.degree}
-                  </p>
-                  <p className='text-foreground/60'>{edu.location}</p>
+                <div className='flex flex-col gap-4 md:hidden'>
+                  <div className='flex gap-4'>
+                    <div className='w-16 h-16 rounded-xl bg-white p-2 shadow-md flex-shrink-0'>
+                      <Image
+                        src={edu.logo}
+                        alt={edu.institution}
+                        width={64}
+                        height={64}
+                        className='w-full h-full object-contain'
+                      />
+                    </div>
+                    <div>
+                      <Link href={edu.instLink}>
+                        <h3 className='text-xl font-semibold mb-1'>
+                          {edu.institution}
+                        </h3>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className='flex flex-col w-full'>
+                    <p className='text-lg text-foreground/70 mb-1'>
+                      {edu.degree}
+                    </p>
+                    <p className='text-foreground/60'>{edu.location}</p>
+                  </div>
                 </div>
               </div>
               <div className='text-foreground/70 md:text-right'>
@@ -131,25 +159,53 @@ export function EducationSectionShort() {
           >
             <div className='flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6'>
               <div className='flex items-start gap-4'>
-                <div className='w-16 h-16 rounded-xl bg-white p-2 shadow-md flex-shrink-0'>
-                  <Image
-                    src={edu.logo}
-                    alt='Academic City University'
-                    width={64}
-                    height={64}
-                    className='w-full h-full object-contain'
-                  />
+                <div className='max-md:hidden flex gap-4'>
+                  <div className='w-16 h-16 rounded-xl bg-white p-2 shadow-md flex-shrink-0'>
+                    <Image
+                      src={edu.logo}
+                      alt={edu.institution}
+                      width={64}
+                      height={64}
+                      className='w-full h-full object-contain'
+                    />
+                  </div>
+                  <div>
+                    <Link href={edu.instLink}>
+                      <h3 className='text-xl font-semibold mb-1'>
+                        {edu.institution}
+                      </h3>
+                    </Link>
+                    <p className='text-lg text-foreground/70 mb-1'>
+                      {edu.degree}
+                    </p>
+                    <p className='text-foreground/60'>{edu.location}</p>
+                  </div>
                 </div>
-                <div>
-                  <Link href={edu.instLink}>
-                    <h3 className='text-xl font-semibold mb-1'>
-                      {edu.institution}
-                    </h3>
-                  </Link>
-                  <p className='text-lg text-foreground/70 mb-1'>
-                    {edu.degree}
-                  </p>
-                  <p className='text-foreground/60'>{edu.location}</p>
+                <div className='flex flex-col gap-4 md:hidden'>
+                  <div className='flex gap-4'>
+                    <div className='w-16 h-16 rounded-xl bg-white p-2 shadow-md flex-shrink-0'>
+                      <Image
+                        src={edu.logo}
+                        alt={edu.institution}
+                        width={64}
+                        height={64}
+                        className='w-full h-full object-contain'
+                      />
+                    </div>
+                    <div>
+                      <Link href={edu.instLink}>
+                        <h3 className='text-xl font-semibold mb-1'>
+                          {edu.institution}
+                        </h3>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className='flex flex-col w-full'>
+                    <p className='text-lg text-foreground/70 mb-1'>
+                      {edu.degree}
+                    </p>
+                    <p className='text-foreground/60'>{edu.location}</p>
+                  </div>
                 </div>
               </div>
               <div className='text-foreground/70 md:text-right'>
@@ -178,7 +234,7 @@ export function EducationSectionShort() {
       <div className='mt-6 flex justify-center text-center'>
         <Link
           href='/resume'
-          className='text-apple-blue hover:text-apple-blue-hover font-medium transition-colors flex gap-3'
+          className='max-md:text-md text-apple-blue hover:text-apple-blue-hover font-medium transition-colors flex gap-3'
         >
           View Full Resume
           <ArrowRight className='h-6 w-6' />

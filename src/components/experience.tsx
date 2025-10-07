@@ -49,23 +49,53 @@ export default function ExperienceSection() {
           >
             <div className='flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6'>
               <div className='flex items-start gap-4'>
-                <div className='w-12 h-12 rounded-xl bg-white p-1 shadow-md flex-shrink-0'>
-                  <Image
-                    src={job.logo}
-                    alt={job.company}
-                    width={48}
-                    height={48}
-                    className='w-full h-full object-contain rounded-lg'
-                  />
+                <div className='flex flex-col md:hidden gap-4'>
+                  <div className='flex gap-3'>
+                    <div className='w-12 h-12 rounded-xl bg-white p-1 shadow-md flex-shrink-0'>
+                      <Image
+                        src={job.logo}
+                        alt={job.company}
+                        width={48}
+                        height={48}
+                        className='w-full h-full object-contain rounded-lg'
+                      />
+                    </div>
+                    <div>
+                      <Link href={job.link}>
+                        <h3 className='text-xl font-semibold mb-1'>
+                          {job.title}
+                        </h3>
+                      </Link>
+                    </div>
+                  </div>
+                  <div>
+                    <p className='text-lg text-apple-blue font-medium mb-1'>
+                      {job.company}
+                    </p>
+                    <p className='text-sm text-foreground/60'>{job.location}</p>
+                  </div>
                 </div>
-                <div>
-                  <Link href={job.link}>
-                    <h3 className='text-xl font-semibold mb-1'>{job.title}</h3>
-                  </Link>
-                  <p className='text-lg text-apple-blue font-medium mb-1'>
-                    {job.company}
-                  </p>
-                  <p className='text-sm text-foreground/60'>{job.location}</p>
+                <div className='flex max-md:hidden gap-4'>
+                  <div className='w-12 h-12 rounded-xl bg-white p-1 shadow-md flex-shrink-0'>
+                    <Image
+                      src={job.logo}
+                      alt={job.company}
+                      width={48}
+                      height={48}
+                      className='w-full h-full object-contain rounded-lg'
+                    />
+                  </div>
+                  <div>
+                    <Link href={job.link}>
+                      <h3 className='text-xl font-semibold mb-1'>
+                        {job.title}
+                      </h3>
+                    </Link>
+                    <p className='text-lg text-apple-blue font-medium mb-1'>
+                      {job.company}
+                    </p>
+                    <p className='text-sm text-foreground/60'>{job.location}</p>
+                  </div>
                 </div>
               </div>
               <div className='text-foreground/70 md:text-right'>
@@ -123,23 +153,53 @@ export function ExperienceSectionShort() {
           >
             <div className='flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6'>
               <div className='flex items-start gap-4'>
-                <div className='w-12 h-12 rounded-xl bg-white p-1 shadow-md flex-shrink-0'>
-                  <Image
-                    src={job.logo}
-                    alt={job.company}
-                    width={48}
-                    height={48}
-                    className='w-full h-full object-contain rounded-lg'
-                  />
+                <div className='flex flex-col md:hidden gap-4'>
+                  <div className='flex gap-3'>
+                    <div className='w-12 h-12 rounded-xl bg-white p-1 shadow-md flex-shrink-0'>
+                      <Image
+                        src={job.logo}
+                        alt={job.company}
+                        width={48}
+                        height={48}
+                        className='w-full h-full object-contain rounded-lg'
+                      />
+                    </div>
+                    <div>
+                      <Link href={job.link}>
+                        <h3 className='text-xl font-semibold mb-1'>
+                          {job.title}
+                        </h3>
+                      </Link>
+                    </div>
+                  </div>
+                  <div>
+                    <p className='text-lg text-apple-blue font-medium mb-1'>
+                      {job.company}
+                    </p>
+                    <p className='text-sm text-foreground/60'>{job.location}</p>
+                  </div>
                 </div>
-                <div>
-                  <Link href={job.link}>
-                    <h3 className='text-xl font-semibold mb-1'>{job.title}</h3>
-                  </Link>
-                  <p className='text-lg text-apple-blue font-medium mb-1'>
-                    {job.company}
-                  </p>
-                  <p className='text-sm text-foreground/60'>{job.location}</p>
+                <div className='flex max-md:hidden gap-4'>
+                  <div className='w-12 h-12 rounded-xl bg-white p-1 shadow-md flex-shrink-0'>
+                    <Image
+                      src={job.logo}
+                      alt={job.company}
+                      width={48}
+                      height={48}
+                      className='w-full h-full object-contain rounded-lg'
+                    />
+                  </div>
+                  <div>
+                    <Link href={job.link}>
+                      <h3 className='text-xl font-semibold mb-1'>
+                        {job.title}
+                      </h3>
+                    </Link>
+                    <p className='text-lg text-apple-blue font-medium mb-1'>
+                      {job.company}
+                    </p>
+                    <p className='text-sm text-foreground/60'>{job.location}</p>
+                  </div>
                 </div>
               </div>
               <div className='text-foreground/70 md:text-right'>
@@ -163,7 +223,7 @@ export function ExperienceSectionShort() {
       <div className='mt-6 flex justify-center text-center'>
         <Link
           href='/resume'
-          className='text-apple-blue hover:text-apple-blue-hover font-medium transition-colors flex gap-3'
+          className='text-apple-blue hover:text-apple-blue-hover font-medium transition-colors max-md:text-md flex gap-3'
         >
           View Full Resume
           <ArrowRight className='h-6 w-6' />

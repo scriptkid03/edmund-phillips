@@ -48,16 +48,16 @@ export default function About() {
       <div className='container mx-auto px-4 py-16 max-w-6xl'>
         <section className='mb-24'>
           <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-12 shadow-2xl'>
-            <h1 className='text-5xl md:text-6xl font-semibold mb-6 tracking-tight'>
+            <h1 className='text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight'>
               About Me
             </h1>
-            <p className='text-xl text-foreground/70 mb-6 leading-relaxed'>
+            <p className='text-md md:text-xl text-foreground/70 mb-6 leading-relaxed'>
               I'm Edmund Kwame Odame Phillips, a passionate Frontend Web
               Developer based in Accra, Ghana. Recent B.Sc. Computer Science
               graduate from Academic City University, I specialize in building
               modern web and mobile applications that solve real-world problems.
             </p>
-            <p className='text-xl text-foreground/70 leading-relaxed'>
+            <p className='text-md md:text-lg text-foreground/70 leading-relaxed'>
               With hands-on experience at Stanbic Bank Ghana and multiple
               projects under my belt, I bring a unique blend of technical
               expertise and creative problem-solving to every project I work on.

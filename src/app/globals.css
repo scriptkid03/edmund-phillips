@@ -215,6 +215,9 @@
   --glass-border: oklch(1 0 0 / 20%); /* white/20 for light mode */
   --apple-blue: #0066cc;
   --apple-blue-hover: #0052a3;
+
+  /* --font-mono: var(--font-geist-mono), -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Segoe UI", "Roboto", Helvetica, Arial, sans-serif; */
 }
 
 .dark {
@@ -225,7 +228,9 @@
   --card-foreground: oklch(0.965 0 0);
   --popover: oklch(0.18 0 0);
   --popover-foreground: oklch(0.965 0 0);
-  --primary: oklch(0.965 0 0); /* Athens Gray - same as foreground for buttons */
+  --primary: oklch(
+    0.965 0 0
+  ); /* Athens Gray - same as foreground for buttons */
   --primary-foreground: oklch(0.117 0 0); /* Shark */
   --secondary: oklch(0.25 0 0);
   --secondary-foreground: oklch(0.965 0 0);

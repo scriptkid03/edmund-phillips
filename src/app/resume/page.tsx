@@ -75,13 +75,13 @@ export default function Resume() {
           <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-8 shadow-2xl'>
             <div className='flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8'>
               <div className='flex-1'>
-                <h1 className='text-4xl md:text-5xl font-semibold mb-4 tracking-tight'>
+                <h1 className='text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 tracking-tight'>
                   {personalInfo.name}
                 </h1>
-                <p className='text-2xl text-apple-blue font-medium mb-6'>
+                <p className='text-xl md:text-2xl text-apple-blue font-medium mb-6'>
                   {personalInfo.title}
                 </p>
-                <p className='text-lg text-foreground/70 mb-8 max-w-2xl leading-relaxed'>
+                <p className='text-md md:text-lg text-foreground/70 mb-8 max-w-2xl leading-relaxed'>
                   Frontend Web Developer specializing in modern web and mobile
                   applications using React, Next.js, and React Native. Recent
                   B.Sc. Computer Science graduate with hands-on experience
@@ -238,10 +238,10 @@ export default function Resume() {
 
         <section className='mt-16'>
           <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-12 shadow-2xl text-center'>
-            <h2 className='text-3xl font-semibold mb-4 tracking-tight'>
+            <h2 className='text-2xl md:text-3xl font-semibold mb-4 tracking-tight'>
               Ready to Collaborate?
             </h2>
-            <p className='text-lg text-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed'>
+            <p className='text-md md:text-lg text-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed'>
               I'm always interested in discussing new opportunities, innovative
               projects, and ways to contribute to meaningful work.
             </p>

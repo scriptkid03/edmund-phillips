@@ -44,10 +44,10 @@ export default function Home() {
     <div className='container mx-auto px-4 py-16 max-md:py-8 max-w-6xl'>
       <section className='mb-24'>
         <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-12 shadow-2xl'>
-          <h1 className='text-5xl md:text-6xl font-semibold mb-6 tracking-tight'>
+          <h1 className='text-3xl md:text-6xl font-semibold mb-6 tracking-tight'>
             Hi, I'm Edmund Phillips
           </h1>
-          <p className='text-xl text-foreground/70 mb-8 max-w-2xl leading-relaxed'>
+          <p className='text-md md:text-xl text-foreground/70 mb-8 max-w-2xl leading-relaxed'>
             Frontend Web Developer crafting elegant user interfaces and
             experiences. Passionate about building responsive, modern web
             applications that make a difference.
@@ -74,14 +74,14 @@ export default function Home() {
               className='rounded-full hover:bg-foreground/10 backdrop-blur-sm'
               asChild
             >
-              <a
+              <Link
                 href='https://github.com'
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='GitHub'
               >
                 <Github className='h-5 w-5' />
-              </a>
+              </Link>
             </Button>
             <Button
               variant='ghost'
@@ -89,14 +89,14 @@ export default function Home() {
               className='rounded-full hover:bg-foreground/10 backdrop-blur-sm'
               asChild
             >
-              <a
+              <Link
                 href='https://linkedin.com'
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='LinkedIn'
               >
                 <Linkedin className='h-5 w-5' />
-              </a>
+              </Link>
             </Button>
             <Button
               variant='ghost'
@@ -104,16 +104,16 @@ export default function Home() {
               className='rounded-full hover:bg-foreground/10 backdrop-blur-sm'
               asChild
             >
-              <a href='mailto:your.email@example.com' aria-label='Email'>
+              <Link href='mailto:your.email@example.com' aria-label='Email'>
                 <Mail className='h-5 w-5' />
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
       </section>
       <section className='mb-24'>
         <div className='flex items-center justify-between mb-10'>
-          <h2 className='text-4xl font-semibold tracking-tight'>
+          <h2 className='text-2xl md:text-4xl font-semibold tracking-tight'>
             Featured Projects
           </h2>
           <Button
@@ -136,7 +136,7 @@ export default function Home() {
               className='group backdrop-blur-xl bg-glass border border-glass-border rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300'
             >
               <h3 className='text-xl font-semibold mb-3'>{project.title}</h3>
-              <p className='text-foreground/70 mb-6 leading-relaxed'>
+              <p className='text-foreground/70 mb-6 text-md leading-relaxed'>
                 {project.description}
               </p>
               <div className='flex flex-wrap gap-2 mb-6'>
@@ -161,11 +161,11 @@ export default function Home() {
       </section>
       <section className='mb-24'>
         <div className='backdrop-blur-xl bg-glass border border-glass-border rounded-3xl p-12 shadow-xl'>
-          <h2 className='text-4xl font-semibold mb-8 tracking-tight'>
+          <h2 className='text-3xl md:text-4xl font-semibold mb-8 tracking-tight'>
             About Me
           </h2>
           <div className='max-w-3xl'>
-            <p className='text-lg text-foreground/70 mb-4 leading-relaxed'>
+            <p className='text-md md:text-lg text-foreground/70 mb-4 leading-relaxed'>
               I'm a developer with a passion for creating seamless web
               experiences. With expertise in modern JavaScript frameworks and a
               keen eye for design, I build applications that are both functional
@@ -187,7 +187,7 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <h2 className='text-4xl font-semibold mb-10 tracking-tight'>
+        <h2 className='text-3xl md:text-4xl font-semibold mb-10 tracking-tight'>
           Skills & Technologies
         </h2>
         <div className='flex flex-wrap gap-3'>
